@@ -155,24 +155,34 @@ export default function Footer() {
             icon={<HouseIcon />}
           />
 
-          {/* Dashboard or Profile */}
-          {canAccessDashboard ? (
-            <BottomNavigationAction
-              component={Link}
-              to="/dashboard"
-              label="Dashboard"
-              value="Dashboard"
-              icon={<DashboardIcon />}
-            />
-          ) : (
-            <BottomNavigationAction
-              component={Link}
-              to="/userProfile"
-              label="Profile"
-              value="Profile"
-              icon={<PersonIcon />}
-            />
-          )}
+          {/* Dashboard was previously shown for allowed users. Commented out per request.
+            {canAccessDashboard ? (
+              <BottomNavigationAction
+                component={Link}
+                to="/dashboard"
+                label="Dashboard"
+                value="Dashboard"
+                icon={<DashboardIcon />}
+              />
+            ) : (
+              <BottomNavigationAction
+                component={Link}
+                to="/userProfile"
+                label="Profile"
+                value="Profile"
+                icon={<PersonIcon />}
+              />
+            )}
+          */}
+
+          {/* Always show Profile icon (click navigates to user profile) */}
+          <BottomNavigationAction
+            component={Link}
+            to="/userProfile"
+            label="Profile"
+            value="Profile"
+            icon={<PersonIcon />}
+          />
 
           {/* QR */}
           <BottomNavigationAction

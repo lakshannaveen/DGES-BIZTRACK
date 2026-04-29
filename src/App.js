@@ -653,7 +653,11 @@ function App() {
                   >
                     <Routes>
                       <Route element={<Home />} path="/home" />
-                      <Route element={<ProtectedDashboardRoute><Dashboard /></ProtectedDashboardRoute>} path="/*" />
+                      {/* Default to Home on app load instead of Dashboard. */}
+                      <Route element={<Home />} path="/*" />
+                      {/* Previously defaulted to Dashboard:
+                        <Route element={<ProtectedDashboardRoute><Dashboard /></ProtectedDashboardRoute>} path="/*" />
+                      */}
                       <Route element={<BudgetShop />} path="/budgetshop" />
                       <Route element={<Leave />} path="/leave" />
                       <Route element={<Extra_Hours />} path="/ex_hours" />
